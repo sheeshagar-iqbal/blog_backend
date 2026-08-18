@@ -9,11 +9,11 @@ dotenv.config()
 
 require('./config/db')
 app.use(cors())
-
+const port =process.env.port || 8080
 app.use(express.json())
 
 app.use(userrouter)
 app.use(blogrouter)
 app.use(commentrouter)
 
-app.listen(process.env.port,()=>console.log(`server is running ${process.env.port}`))
+app.listen(process.env.port,()=>console.log(`server is running ${port}`))
