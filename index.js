@@ -8,7 +8,9 @@ const commentrouter = require('./router/comment.router')
 dotenv.config()
 
 require('./config/db')
-app.use(cors())
+app.use(cors({
+  origin: process.env.ORIGIN
+}))
 const port =process.env.port || 8080
 app.use(express.json())
 
